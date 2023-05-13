@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://pbs.twimg.com/profile_images/1616684333196251138/iaPzfmZP_400x400.jpg" />
+
+    <title>skikozou | cookieポリシー</title>
+
+    <link rel="stylesheet" href="/style.css" />
+
+    <script src="/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script>
+      if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
+        alert("現在、スマートフォン及びタブレットには対応しておりません。\n近いうちに対応させるので今しばらくお待ち下さい。\n対応するまで僕のtwitterフォローしといてください");
+        window.open("https://twitter.com/@skikozou1596","_self")
+      }else{
+        
+      }
+      if (Cookies.get("license")=="Noconsent") {
+        window.open("https://skikozou.glitch.me/","_self")
+      }
+    </script>
+  </head>
+  <nav class="top">
+    <a href="https://skikozou.glitch.me/home.html" class="topbar">ホーム</a
+    >・
+    <a href="https://skikozou.glitch.me/info.html" class="topbar"
+      >本サイトについて</a
+    >・
+    <a href="https://skikozou.glitch.me/explanation.html" class="topbar"
+      >開発者のプロフィール</a
+    >・
+    <a href="https://skikozou.glitch.me/license.html" class="topbar"
+      >利用規約</a
+    >・
+              <a href="https://note.com/skikozou/" class="topbar">note</a>
+    <a class="topbar2">(c) 2023 skikozou</a>
+        </nav>
+  <body>
+    <div class="wrapper">
+      <br><br><br>
+      <div class="content" role="main">
+        <h1>
+          cookieポリシー
+        </h1>
+        <h3>
+          1.Cookieについて
+        </h3>
+        <a>
+          Cookieとはお客様のウェブサイト閲覧情報を、そのお客様のコンピューター（PCやスマートフォン、タブレットなどインターネット接続可能な機器）に記憶させる機能のことです。<br><br>
+          Cookieには、運営によって設定されるもの（ファーストパーティークッキー）と、運営と提携する第三者によって設定されるもの（サードパーティークッキー）があります。<br>
+        </a>
+        <h3>
+          2.Cookieの利用目的
+        </h3>
+        <a>
+          （1）運営では、Cookieを、お客様がウェブサイトを閲覧する際に同じ情報を繰り返し入力することがなくなるなど、お客様の利便性向上のために使用しています。<br><br>
+          （2）運営では、Cookieを使用して収集した情報を利用して、お客様のウェブサイトの利用状況（アクセス状況、トラフィック、ルーティング等）を分析し、ウェブサイト自体のパフォーマンス改善や、運営からお客様に提供するサービスの向上、改善のために使用することがあります。<br><br>
+          （3）この他、Cookieは、提携する広告配信サービス提供会社における行動ターゲティング広告の配信に使用される場合があります。<br>
+        </a>
+        <h3>
+          3.Cookieの拒否方法
+        </h3>
+        <a>
+          （1）全てのCookieを拒否する方法<br>
+          お客様がブラウザの設定を変更することによりCookieを無効にすることが可能です。ただし、Cookieを無効にした場合は、一部のサービスが受けられない場合があります。<br>
+          下記にある同意確認文にあるボタンをクリックしてください<br><br>
+          （2）Cookieを拒否するという設定のみ許可する方法<br>
+          下記にある同意確認文にあるボタンをクリックしてください<br>
+        </a>
+        <div>
+          <h1>
+            Cookie 利用 同意確認文
+          </h1>
+          お客様は、「同意する」ボタンをクリックしてクッキーの使用に同意することで、<br>運営ウェブサイトのすべての機能をご利用頂くことができます。<br>
+          クッキーについての詳細をご希望の場合、またはクッキーの設定変更をご希望の場合は、<br>運営のクッキーポリシーをご覧ください。<br>
+          <input onclick="yes()" type="button" value="同意する">
+          <input onclick="aboutno()" type="button" value="Cookieを拒否するという設定のみ許可する">
+          <input onclick="no()" type="button" value="拒否する">
+          <script>
+            function yes() {
+              document.cookie = "UseCookie=true";
+              document.cookie = "UserId="+Math.random();
+              alert("cookie設定を保存しました");
+            }
+            function aboutno() {
+              document.cookie = "UseCookie=false";
+              alert("cookie設定を保存しました");
+            }
+            function no() {
+              document.cookie = "UseCookie=true; max-age=0";
+              document.cookie = "UseCookie=false; max-age=0";
+              alert("cookieをクリアしました");
+            }
+          </script>
+        </div>
+      </div>
+      <footer class="footer">
+        <div>
+          <img
+          src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/twitter_ico.svg?v=1681200784592"
+          class="illustration2"
+          id="twitter"
+        />
+        <img
+          src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/youtube.png?v=1681203615552"
+          class="illustration3"
+          id="youtube"
+        />
+          <img
+          src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/github_ico.png?v=1681208863582"
+          class="illustration4"
+          id="github"
+        />
+        </div>
+      <p>
+        このサイトはGlitchを使用しています。まだ開発中です。
+      </p>
+      </footer>
+    </div>
+  </body>
+</html>

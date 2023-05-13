@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://pbs.twimg.com/profile_images/1616684333196251138/iaPzfmZP_400x400.jpg" />
+    <title>skikozou | 神経衰弱</title>
+    <link rel="stylesheet" href="/style.css" />
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/script.js" defer></script>
+    <script>
+      if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
+        alert("現在、スマートフォン及びタブレットには対応しておりません。\n近いうちに対応させるので今しばらくお待ち下さい。\n対応するまで僕のtwitterフォローしといてください");
+        window.open("https://twitter.com/@skikozou1596","_self")
+      }else{
+        
+      }
+      if (Cookies.get("license")=="Noconsent") {
+        window.open("https://skikozou.glitch.me/","_self")
+      }
+      
+      
+      if (Cookies.get("speed") == null) {
+    Cookies.set("speed","")
+} else {
+  
+}
+      
+      // グローバル
+// div要素を格納
+var cards = [];
+// 開始時間
+var startTime;
+// 経過秒数用 タイマーID
+var timer;
+// カードめくり用 タイマーID
+var backTimer;
+// 1枚目かどうかのフラグ   1枚目: true   2枚目: false
+var flgFirst = true;
+// 1枚目のカードを格納
+var cardFirst;
+// そろえた枚数
+var countUnit = 0;
+
+
+window.onload = function(){
+    // 数字格納 一時配列
+    var arr = [];
+    
+    for (var i = 0; i < 10; i++){
+        // ペアの数字を10組
+        arr.push(i);
+        arr.push(i);
+    }
+    
+    // シャッフル
+    shuffle(arr);
+    
+    var panel = document.getElementById('panel');
+    
+    // div要素作成
+    for (i = 0; i < 20; i++){
+        var div = document.createElement('div');
+        div.className = 'card back';
+        div.index = i;
+        div.number = arr[i];
+        div.innerHTML = '';
+        div.onclick = turn;
+        panel.appendChild(div);
+        cards.push(div);
+    }
+    // 開始時刻を取得
+    startTime = new Date();
+    // タイマー開始
+    startTimer();
+      var temp = document.getElementById("fast");
+    temp.innerHTML = "最高タイム:"+Cookies.get("speed")+"秒";
+}
+
+// シャッフル用関数
+function shuffle(arr) {
+    var n = arr.length;
+    var temp, i;
+
+    while (n) {
+        i = Math.floor(Math.random() * n--);
+        temp = arr[n];
+        arr[n] = arr[i];
+        arr[i] = temp;
+    }
+    return arr;
+}
+
+// クリック時の処理
+function turn(e){
+    
+    var div = e.target;
+    
+    // カードのタイマー処理が動作中は return
+    if (backTimer) return;
+
+    // 裏向きのカードをクリックした場合は数字を表示する
+    if (div.innerHTML == ''){
+        div.className = 'card';
+        div.innerHTML = div.number; 
+    }else{
+        // 数字が表示されているカードは return
+        return;
+    }
+    
+    // 1枚目の処理
+    if (flgFirst){
+        // cardFirst は2枚目の処理のときに使う
+        cardFirst = div;
+        // フラグ変更
+        flgFirst = false;
+        
+    // 2枚目の処理
+    }else{
+        
+        // 数字が1枚目と一致する場合
+        if (cardFirst.number == div.number){
+            countUnit++;
+            // 見えない状態にする
+            backTimer = setTimeout(function(){
+                div.className = 'card finish';
+                cardFirst.className = 'card finish';
+                backTimer = NaN;
+                
+                if (countUnit == 10){
+                    clearInterval(timer);  // timer終了
+                  alert("game clear!");
+                  var ti2 = Number(localStorage.getItem("minigame1_time"));
+                  var c = Number(Cookies.get("speed"));
+                  if (ti2 < c) {
+                    Cookies.set("speed", ti2);
+                  }
+                }
+            }, 500)
+
+        // 一致しない場合
+        }else{  
+            // カードを裏側に戻す
+            backTimer = setTimeout(function(){
+                div.className = 'card back';
+                div.innerHTML = '';
+                cardFirst.className = 'card back';
+                cardFirst.innerHTML = '';
+                cardFirst = null;
+                backTimer = NaN;
+            }, 500);
+        }
+        
+        flgFirst = true;
+    }  
+}
+
+// タイマー開始
+function startTimer(){
+    timer = setInterval(showSecond, 1000);
+}
+
+// 秒数表示
+function showSecond(){
+    var nowTime = new Date();
+    var elapsedTime = Math.floor((nowTime - startTime) / 1000);
+    var str = '経過秒数: ' + elapsedTime + '秒';
+    var re = document.getElementById('result');
+    re.innerHTML = str;
+    localStorage.setItem("minigame1_time",elapsedTime);
+}
+    </script>
+  </head>
+  <nav class="top">
+    <a href="https://skikozou.glitch.me/home.html" class="topbar">ホーム</a
+    >・
+    <a href="https://skikozou.glitch.me/info.html" class="topbar"
+      >本サイトについて</a
+    >・
+    <a href="https://skikozou.glitch.me/explanation.html" class="topbar"
+      >開発者のプロフィール</a
+    >・
+    <a href="https://skikozou.glitch.me/license.html" class="topbar"
+      >利用規約</a
+    >・
+              <a href="https://note.com/skikozou/" class="topbar">note</a>
+    <a class="topbar2">(c) 2023 skikozou</a>
+        </nav>
+  <body>
+    <div class="wrapper">
+      <br><br>
+      <div class="content" role="main">
+    <script src="https://skikozou.glitch.me/game1.js"></script>
+        <div id="panel"></div>
+
+<div id="result">経過秒数: 0秒</div>
+        <div id="fast">前回のタイム:</div>
+      </div>
+      <footer class="footer">
+        <div>
+          <img
+          src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/twitter_ico.svg?v=1681200784592"
+          class="illustration2"
+          id="twitter"
+        />
+        <img
+          src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/youtube.png?v=1681203615552"
+          class="illustration3"
+          id="youtube"
+        />
+          <img
+          src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/github_ico.png?v=1681208863582"
+          class="illustration4"
+          id="github"
+        />
+        </div>
+      <p>
+        このサイトはGlitchを使用しています。まだ開発中です。
+      </p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+すべてを
+:
+と
+;
+で表す
+0 = :
+1 = ;
+バイナリに変換
+0と1を:と;にする
+
+// string -> byte[]
+function string2bytes(string) {
+    var bytes = string.split('').map(char => char.charCodeAt(0))
+    return bytes;
+}
+
+// byte[] -> string
+function bytes2string(bytes) {
+    var string = bytes.map(byte => String.fromCharCode(byte)).join('');
+    return string;
+}
