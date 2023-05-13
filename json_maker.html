@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://pbs.twimg.com/profile_images/1616684333196251138/iaPzfmZP_400x400.jpg" />
+
+    <title>skikozou | json maker</title>
+
+    <link rel="stylesheet" href="/style.css" />
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/script.js" defer></script>
+    <script>
+      if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
+        alert("現在、スマートフォン及びタブレットには対応しておりません。\n近いうちに対応させるので今しばらくお待ち下さい。\n対応するまで僕のtwitterフォローしといてください");
+        window.open("https://twitter.com/@skikozou1596","_self")
+      }else{
+        
+      }
+      if (Cookies.get("license")=="Noconsent") {
+        window.open("https://skikozou.glitch.me/","_self")
+      }
+      
+      function make() {
+        var name = document.getElementById("name").value;
+        var value = document.getElementById("value").value;
+        var out = '{"'+name+'":"'+value+'"}';
+        var text = document.getElementById("out").textContent;
+        document.getElementById("out").textContent = out;
+      }
+      
+      function add() {
+        var name = document.getElementById("name").value;
+        var value = document.getElementById("value").value;
+        var temp = document.getElementById("out").value;
+        var out = temp.replace("}",",");
+        var out = out + '"'+name+'":"'+value+'"}'
+        var text = document.getElementById("out").textContent;
+        document.getElementById("out").textContent = out;
+      }
+      
+      function test() {
+        alert("正常")
+      }
+    </script>
+  </head>
+  <nav class="top">
+    <a href="https://skikozou.glitch.me/home.html" class="topbar">ホーム</a
+    >・
+    <a href="https://skikozou.glitch.me/info.html" class="topbar"
+      >本サイトについて</a
+    >・
+    <a href="https://skikozou.glitch.me/explanation.html" class="topbar"
+      >開発者のプロフィール</a
+    >・
+    <a href="https://skikozou.glitch.me/license.html" class="topbar"
+      >利用規約</a
+    >・
+              <a href="https://note.com/skikozou/" class="topbar">note</a>
+    <a class="topbar2">(c) 2023 skikozou</a>
+        </nav>
+  <body>
+    <div class="wrapper">
+      <br><br>
+      <div class="content" role="main">
+        <h1>
+          json maker
+        </h1>
+        <h3>
+          値と名前をjson形式にします
+        </h3>
+        <div>
+          <input type="button" value="作成" onclick="make()">
+          <input type="button" value="追加" onclick="add()">
+        </div>
+        <input type="text" id="name" placeholder="name">
+        <input type="text" id="value" placeholder="value">
+        <textarea id="out" rows="5" cols="100" placeholder="出力欄"></textarea>
+      </div>
+      <footer class="footer">
+        <div>
+          <img
+          src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/twitter_ico.svg?v=1681200784592"
+          class="illustration2"
+          id="twitter"
+        />
+        <img
+          src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/youtube.png?v=1681203615552"
+          class="illustration3"
+          id="youtube"
+        />
+          <img
+          src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/github_ico.png?v=1681208863582"
+          class="illustration4"
+          id="github"
+        />
+        </div>
+      <p>
+        このサイトはGlitchを使用しています。まだ開発中です。
+      </p>
+      </footer>
+    </div>
+  </body>
+</html>

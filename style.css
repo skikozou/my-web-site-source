@@ -1,0 +1,332 @@
+/******************************************************************************
+START Glitch hello-app default styles
+
+The styles in this section do some minimal CSS resets, set default fonts and 
+colors, and handle the layout for our footer and "Remix on Glitch" button. If
+you're new to CSS they may seem a little complicated, but you can scroll down
+to this section's matching END comment to see page-specific styles.
+******************************************************************************/
+
+/* 
+  The style rules specify elements by type and by attributes such as class and ID
+  Each section indicates an element or elements, then lists the style properties to apply
+  See if you can cross-reference the rules in this file with the elements in index.html
+*/
+
+/* Our default values set as CSS variables */
+:root {
+  --color-bg: #ffffff;
+  --color-text-main: #000000;
+  --color-primary: #ffff00;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  --font-family: "Shin Go Regular";
+  --font-family-header: "Shin Go Regular";
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+
+
+/* Import fonts */
+@font-face {
+  font-family: Shin Go Regular;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+    format("opentype");
+}
+@font-face {
+  font-family: Shin Go Regular;
+  font-weight: bold;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+    format("opentype");
+}
+
+/* Our remix on glitch button */
+.btn--remix {
+  font-family: Shin Go Regular;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  line-height: 1rem;
+  font-weight: 500;
+  height: 2.75rem;
+  align-items: center;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #000000;
+  white-space: nowrap;
+  margin-left: auto;
+}
+.btn--remix img {
+  margin-right: 0.5rem;
+}
+.btn--remix:hover {
+  background-color: #d0fff1;
+}
+
+/* Navigation grid */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto 0;
+  padding: 1rem 0 0.75rem 0;
+  width: 100%;
+  flex-wrap: wrap;
+  border-top: 4px solid #000000;
+}
+
+.footer a:not(.btn--remix):link,
+a:not(.btn--remix):visited {
+  font-family: Shin Go Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-style: none;
+  text-decoration: none;
+}
+.footer a:hover {
+  background: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer .links {
+  padding: 0.5rem 1rem 1.5rem;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.divider {
+  padding: 0 1rem;
+}
+/******************************************************************************
+END Glitch hello-app default styles
+******************************************************************************/
+
+body {
+  font-family: Shin Go Regular;
+  background-color: var(--color-bg);
+}
+
+/* Page structure */
+.wrapper {
+  min-height: var(--wrapper-height);
+  display: grid;
+  place-items: center;
+  margin: 0 1rem;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Very light scaling for our illustration */
+.title {
+  color: #696969;
+  font-family: Shin Go Regular;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 100px;
+  line-height: 105%;
+  margin: 0;
+}
+
+/* Very light scaling for our illustration */
+.illustration {
+  max-width: 100%;
+  max-height: var(--image-max-width);
+  margin-top: var(--image-margin);
+  border-radius: 50%;
+}
+
+.illustration2 {
+  max-width: 7%;
+  max-height: var(1);
+  margin-top: var(1);
+}
+
+.illustration3 {
+  max-width: 7%;
+  max-height: var(1);
+  margin-top: var(1);
+}
+
+.illustration4 {
+  max-width: 7%;
+  max-height: var(1);
+  margin-top: var(1);
+}
+
+/* Instructions */
+.instructions {
+  margin: 1rem auto 0;
+}
+
+/* Button - Add it from the README instructions */
+button,
+input {
+  font-family: inherit;
+  font-size: 200%;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: 500ms;
+}
+
+/* Subheading */
+h2 {
+  color: #2800ff;
+}
+
+h5 {
+  float: left;
+}
+
+/* Interactive image */
+.illustration:active {
+  transform: translateY(5px);
+}
+
+.illustration2:active {
+  transform: translateY(5px);
+}
+
+.illustration3:active {
+  transform: translateY(5px);
+}
+
+.illustration4:active {
+  transform: translateY(5px);
+}
+
+.dipped {
+  transform: translateY(5px);
+}
+.fileopener {
+  cursor: pointer;
+  font-weight: bold;
+  border-bottom: 3px solid var(--color-primary);
+  color: var(--color-secondary);
+}
+.fileopener:hover {
+  border-bottom: 3px solid var(--color-secondary);
+}
+
+nav {
+  z-index:10000;
+  width: 100%;
+  height: 50px;
+  background-color: #ff9900;
+  padding-top: 10px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-size: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+#panel {
+    width: 310px;
+    height: 340px;
+    overflow: hidden;
+}
+
+.card {
+    width: 60px;
+    height: 80px;
+    line-height: 80px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    box-shadow: gray 2px 2px;
+    background: white;
+    float: left;
+    cursor: pointer;
+}
+/* 裏の状態 */
+.back {
+    background-image: url('img/back.png');
+    background-size: 60px 80px;
+}
+/* 終了時 */
+.finish {
+    opacity: 0;
+    cursor: default;
+}
+/* 経過秒数 */
+#result {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+.checkbox {
+  justify-content: center;
+}
+
+.hub{
+  font-family: inherit;
+  font-size: 200%;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: 500ms;
+  text-decoration: none;
+  color:#000000;
+  display: inline-block;
+}
+.bush{
+  font-family: inherit;
+  font-size: 200%;
+  background: #ffffff;
+  border: 1px solid #ff3300;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: 500ms;
+  text-decoration: none;
+  color:#ff3300;
+	display: inline-block;
+}
+
+.topbar {
+  font-size: 120%;
+  text-decoration: none;
+  color:#696969;
+  z-index:10000;
+}
+
+.topbar:hover {
+  z-index:10000;
+  font-size: 120%;
+  text-decoration: none;
+  color:#696969;
+  background-color: #ffcc00;
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all  0.3s ease;
+}

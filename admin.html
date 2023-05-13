@@ -1,0 +1,62 @@
+<html>
+  <script>
+      if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
+        alert("現在、スマートフォン及びタブレットには対応しておりません。\n近いうちに対応させるので今しばらくお待ち下さい。\n対応するまで僕のtwitterフォローしといてください");
+        window.open("https://twitter.com/@skikozou1596","_self")
+      }else{
+        
+      }
+    let pass = localStorage.getItem("admin");
+    let admin = prompt("input your admin password");
+    if (pass==admin) {
+      var f = confirm("ローカル変数を追加しますか？");
+      if (f==true) {
+        var name = prompt("ローカル変数名");
+      var value = prompt(name+"の中身");
+      localStorage.setItem(name, value);
+      alert("変数を保存しました");
+      }
+      else if (f==false) {
+        var f2 = confirm("ローカル変数を削除しますか？");
+        if (f2==true) {
+          var name = prompt("ローカル変数名");
+          localStorage.removeItem(name)
+          alert("変数を削除しました")
+        }
+        else if (f2==false) {
+          
+        }
+      }
+    }
+    else {
+      window.open("https://skikozou.glitch.me/home.html","_self");
+    }
+    function k() {
+      var kn = prompt("何番目のキー?");
+          alert(localStorage.getItem(localStorage.key(kn))+" = "+localStorage.key(kn))
+    }
+    var ln =0;
+    function lists2() {
+      ln++;
+      let l1 = localStorage.getItem(localStorage.key(ln))+" = "+localStorage.key(ln);
+      let text = document.getElementById("t1").textContent;
+      document.getElementById("t1").textContent = l1;
+    }
+    function reset() {
+      ln = 0;
+      let text = document.getElementById("t1").textContent;
+      document.getElementById("t1").textContent = null;
+    }
+    
+    function window1() {
+      window.open("https://skikozou.glitch.me/scriptTest.html","_blank","menubar=0,width=300,height=200,top=100,left=100")
+    }
+    
+    
+  </script>
+  <input type="button" value="key" onclick="k()">
+  <input type="button" value="list" onclick="lists2()">
+  <input type="button" value="reset" onclick="reset()">
+  <input type="button" value="現在地" onclick="window1()">
+  <a id="t1"></a>
+</html>

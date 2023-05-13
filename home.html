@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="https://pbs.twimg.com/profile_images/1616684333196251138/iaPzfmZP_400x400.jpg"
+    />
+
+    <title>skikozou | home</title>
+
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/script.js" defer></script>
+    <script>
+      if (Cookies.get("license") == "Noconsent") {
+        window.open("https://skikozou.glitch.me/", "_self");
+      }
+      
+      if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
+        alert("現在、スマートフォン及びタブレットには対応しておりません。\n近いうちに対応させるので今しばらくお待ち下さい。\n対応するまで僕のtwitterフォローしといてください");
+        window.open("https://twitter.com/@skikozou1596","_self")
+      }else{
+        
+      }
+
+      let n = localStorage.getItem("count");
+
+      function push() {
+        Push.create("宣伝", {
+          //タイトル
+          body: "みんなもAntiBanJapanに入ろう!\nABJは日本最大のマインクラフト統合版のチートコミュニティです\n今年からABJ 2期が始まるのでぜひdiscordサーバーに来てください！", //内容
+          icon: "https://pbs.twimg.com/profile_images/1594007809892700160/pUZK3CTY_400x400.jpg", //ロゴ等の画像
+          timeout: 100000, // 通知が消えるタイミング
+          vibrate: [100, 100, 100], // モバイル端末でのバイブレーション秒数
+          onClick: function () {
+            // 通知がクリックされた場合の設定
+            window.open("https://discord.gg/abj"); //URLリンク先
+          },
+        });
+      }
+
+      window.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener("keypress", function (e) {
+          if (e.key == "i") {
+            const decoded = atob("bmNhcGU=");
+            let pass = prompt("input your admin password");
+            if (pass == decoded) {
+              window.open("https://skikozou.glitch.me/admin.html");
+            }
+          }
+        });
+      });
+      setInterval(push, 300000);
+      if (Cookies.get("UserId") == atob("MC4yNDYwNzgzMDc1MDY3Mg==")) {
+        alert("you are adminstrator!");
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (e.code == "KeyP") {
+          let code = "JTNDIURPQ1RZUEUlMjBodG1sJTNFJTBBJTNDaHRtbCUyMGxhbmclM0QlMjJqYSUyMiUzRSUwQSUyMCUyMCUzQ2hlYWQlM0UlMEElMEElMjAlMjAlMjAlMjAlM0NtZXRhJTIwY2hhcnNldCUzRCUyMnV0Zi04JTIyJTIwJTJGJTNFJTBBJTIwJTIwJTIwJTIwJTNDbWV0YSUyMG5hbWUlM0QlMjJ2aWV3cG9ydCUyMiUyMGNvbnRlbnQlM0QlMjJ3aWR0aCUzRGRldmljZS13aWR0aCUyQyUyMGluaXRpYWwtc2NhbGUlM0QxJTIyJTIwJTJGJTNFJTBBJTIwJTIwJTIwJTIwJTNDbGluayUyMHJlbCUzRCUyMmljb24lMjIlMjBocmVmJTNEJTIyaHR0cHMlM0ElMkYlMkZwYnMudHdpbWcuY29tJTJGcHJvZmlsZV9pbWFnZXMlMkYxNjE2Njg0MzMzMTk2MjUxMTM4JTJGaWFQemZtWlBfNDAweDQwMC5qcGclMjIlMjAlMkYlM0UlMEElMEElMjAlMjAlMjAlMjAlM0N0aXRsZSUzRXNraWtvem91JTIwJTdDJTIwcHVzaCVFOSU4MCU5QSVFNyU5RiVBNSVFMyU4MyU4NiVFMyU4MiVCOSVFMyU4MyU4OCUzQyUyRnRpdGxlJTNFJTBBJTBBJTIwJTIwJTIwJTIwJTNDbGluayUyMHJlbCUzRCUyMnN0eWxlc2hlZXQlMjIlMjBocmVmJTNEJTIyJTJGc3R5bGUuY3NzJTIyJTIwJTJGJTNFJTBBJTNDc2NyaXB0JTIwc3JjJTNEJTIyaHR0cHMlM0ElMkYlMkZjZG4uanNkZWxpdnIubmV0JTJGbnBtJTJGanMtY29va2llJTQwMiUyRnNyYyUyRmpzLmNvb2tpZS5taW4uanMlMjIlM0UlM0MlMkZzY3JpcHQlM0UlMEElMjAlMjAlMjAlMjAlM0NzY3JpcHQlMjBzcmMlM0QlMjJodHRwcyUzQSUyRiUyRmNkbmpzLmNsb3VkZmxhcmUuY29tJTJGYWpheCUyRmxpYnMlMkZwdXNoLmpzJTJGMS4wLjEyJTJGcHVzaC5qcyUyMiUzRSUzQyUyRnNjcmlwdCUzRSUwQSUyMCUyMCUyMCUyMCUzQ3NjcmlwdCUyMHNyYyUzRCUyMiUyRnNjcmlwdC5qcyUyMiUyMGRlZmVyJTNFJTNDJTJGc2NyaXB0JTNFJTBBJTIwJTIwJTIwJTIwJTNDc2NyaXB0JTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwaWYlMjAoQ29va2llcy5nZXQoJTIybGljZW5zZSUyMiklM0QlM0QlMjJOb2NvbnNlbnQlMjIpJTIwJTdCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwd2luZG93Lm9wZW4oJTIyaHR0cHMlM0ElMkYlMkZza2lrb3pvdS5nbGl0Y2gubWUlMkYlMjIlMkMlMjJfc2VsZiUyMiklMEElMjAlMjAlMjAlMjAlMjAlMjAlN0QlMEElMjAlMjAlMjAlMjAlMjAlMjBmdW5jdGlvbiUyMHB1c2goKSU3QiUwQVB1c2guY3JlYXRlKCUyMiVFNSVBRSVBMyVFNCVCQyU5RCUyMiUyQyUyMCU3QiVFMyU4MCU4MCUyRiUyRiVFMyU4MiVCRiVFMyU4MiVBNCVFMyU4MyU4OCVFMyU4MyVBQiUwQSVFMyU4MCU4MCVFMyU4MCU4MGJvZHklM0ElMjAlMjIlRTMlODElQkYlRTMlODIlOTMlRTMlODElQUElRTMlODIlODJBbnRpQmFuSmFwYW4lRTMlODElQUIlRTUlODUlQTUlRTMlODIlOEQlRTMlODElODYhJTVDbkFCSiVFMyU4MSVBRiVFNiU5NyVBNSVFNiU5QyVBQyVFNiU5QyU4MCVFNSVBNCVBNyVFMyU4MSVBRSVFMyU4MyU5RSVFMyU4MiVBNCVFMyU4MyVCMyVFMyU4MiVBRiVFMyU4MyVBOSVFMyU4MyU5NSVFMyU4MyU4OCVFNyVCNSVCMSVFNSU5MCU4OCVFNyU4OSU4OCVFMyU4MSVBRSVFMyU4MyU4MSVFMyU4MyVCQyVFMyU4MyU4OCVFMyU4MiVCMyVFMyU4MyU5RiVFMyU4MyVBNSVFMyU4MyU4QiVFMyU4MyU4NiVFMyU4MiVBMyVFMyU4MSVBNyVFMyU4MSU5OSU1Q24lRTQlQkIlOEElRTUlQjklQjQlRTMlODElOEIlRTMlODIlODlBQkoyJUU2JTlDJTlGJUUzJTgxJThDJUU1JUE3JThCJUUzJTgxJUJFJUUzJTgyJThCJUUzJTgxJUFFJUUzJTgxJUE3JUUzJTgxJTlDJUUzJTgxJUIyZGlzY29yZCVFMyU4MiVCNSVFMyU4MyVCQyVFMyU4MyU5MCVFMyU4MyVCQyVFMyU4MSVBQiVFNiU5RCVBNSVFMyU4MSVBNiVFMyU4MSU4RiVFMyU4MSVBMCVFMyU4MSU5NSVFMyU4MSU4NCVFRiVCQyU4MSUyMiUyQyVFMyU4MCU4MCUyRiUyRiVFNSU4NiU4NSVFNSVBRSVCOSUwQSVFMyU4MCU4MCVFMyU4MCU4MGljb24lM0ElMjAlMjJodHRwcyUzQSUyRiUyRnBicy50d2ltZy5jb20lMkZwcm9maWxlX2ltYWdlcyUyRjE1OTQwMDc4MDk4OTI3MDAxNjAlMkZwVVpLM0NUWV80MDB4NDAwLmpwZyUyMiUyQyVFMyU4MCU4MCUyRiUyRiVFMyU4MyVBRCVFMyU4MiVCNCVFNyVBRCU4OSVFMyU4MSVBRSVFNyU5NCVCQiVFNSU4MyU4RiUwQSVFMyU4MCU4MCVFMyU4MCU4MHRpbWVvdXQlM0ElMjAxMDAwMDAlMkMlMjAlMkYlMkYlMjAlRTklODAlOUElRTclOUYlQTUlRTMlODElOEMlRTYlQjYlODglRTMlODElODglRTMlODIlOEIlRTMlODIlQkYlRTMlODIlQTQlRTMlODMlOUYlRTMlODMlQjMlRTMlODIlQjAlMEElRTMlODAlODAlRTMlODAlODB2aWJyYXRlJTNBJTIwJTVCMTAwJTJDJTIwMTAwJTJDJTIwMTAwJTVEJTJDJTIwJTJGJTJGJTIwJUUzJTgzJUEyJUUzJTgzJTkwJUUzJTgyJUE0JUUzJTgzJUFCJUU3JUFCJUFGJUU2JTlDJUFCJUUzJTgxJUE3JUUzJTgxJUFFJUUzJTgzJTkwJUUzJTgyJUE0JUUzJTgzJTk2JUUzJTgzJUFDJUUzJTgzJUJDJUUzJTgyJUI3JUUzJTgzJUE3JUUzJTgzJUIzJUU3JUE3JTkyJUU2JTk1JUIwJTBBJUUzJTgwJTgwJUUzJTgwJTgwb25DbGljayUzQSUyMGZ1bmN0aW9uKCklMjAlN0IlMEElRTMlODAlODAlRTMlODAlODAlRTMlODAlODAlRTMlODAlODAlMkYlMkYlMjAlRTklODAlOUElRTclOUYlQTUlRTMlODElOEMlRTMlODIlQUYlRTMlODMlQUElRTMlODMlODMlRTMlODIlQUYlRTMlODElOTUlRTMlODIlOEMlRTMlODElOUYlRTUlQTAlQjQlRTUlOTAlODglRTMlODElQUUlRTglQTglQUQlRTUlQUUlOUElMEF3aW5kb3cub3BlbiglMjJodHRwcyUzQSUyRiUyRmRpc2NvcmQuZ2clMkZhYmolMjIpJTNCJTIwJTJGJTJGVVJMJUUzJTgzJUFBJUUzJTgzJUIzJUUzJTgyJUFGJUU1JTg1JTg4JTBBJTBBJUUzJTgwJTgwJUUzJTgwJTgwJTdEJTBBJTdEKSU3RCUwQSUyMCUyMCUyMCUyMCUzQyUyRnNjcmlwdCUzRSUwQSUyMCUyMCUzQyUyRmhlYWQlM0UlMEElMjAlMjAlM0NuYXYlMjBjbGFzcyUzRCUyMnRvcCUyMiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ2ElMjBocmVmJTNEJTIyaHR0cHMlM0ElMkYlMkZza2lrb3pvdS5nbGl0Y2gubWUlMkZob21lLmh0bWwlMjIlMjBzdHlsZSUzRCUyMiFpbXBvcnRhbnQlM0IlMjIlM0UlRTMlODMlOUIlRTMlODMlQkMlRTMlODMlQTAlM0MlMkZhJTNFJUUzJTgzJUJCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDYSUyMGhyZWYlM0QlMjJodHRwcyUzQSUyRiUyRnNraWtvem91LmdsaXRjaC5tZSUyRmluZm8uaHRtbCUyMiUyMHN0eWxlJTNEJTIyIWltcG9ydGFudCUzQiUyMiUzRSVFNiU5QyVBQyVFMyU4MiVCNSVFMyU4MiVBNCVFMyU4MyU4OCVFMyU4MSVBQiVFMyU4MSVBNCVFMyU4MSU4NCVFMyU4MSVBNiUzQyUyRmElM0UlRTMlODMlQkIlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NhJTIwaHJlZiUzRCUyMmh0dHBzJTNBJTJGJTJGc2tpa296b3UuZ2xpdGNoLm1lJTJGZXhwbGFuYXRpb24uaHRtbCUyMiUyMHN0eWxlJTNEJTIyIWltcG9ydGFudCUzQiUyMiUzRSVFOSU5NiU4QiVFNyU5OSVCQSVFOCU4MCU4NSVFMyU4MSVBRSVFMyU4MyU5NyVFMyU4MyVBRCVFMyU4MyU5NSVFMyU4MiVBMyVFMyU4MyVCQyVFMyU4MyVBQiUzQyUyRmElM0UlRTMlODMlQkIlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NhJTIwaHJlZiUzRCUyMmh0dHBzJTNBJTJGJTJGc2tpa296b3UuZ2xpdGNoLm1lJTJGbGljZW5zZS5odG1sJTIyJTIwc3R5bGUlM0QlMjIhaW1wb3J0YW50JTNCJTIyJTNFJUU1JTg4JUE5JUU3JTk0JUE4JUU4JUE2JThGJUU3JUI0JTg0JTNDJTJGYSUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMChjKSUyMDIwMjMlMjBza2lrb3pvdSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQyUyRm5hdiUzRSUwQSUyMCUyMCUzQ2JvZHklM0UlMEElMjAlMjAlMjAlMjAlM0NkaXYlMjBjbGFzcyUzRCUyMndyYXBwZXIlMjIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlM0NkaXYlMjBjbGFzcyUzRCUyMmNvbnRlbnQlMjIlMjByb2xlJTNEJTIybWFpbiUyMiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ2lucHV0JTIwdHlwZSUzRCUyMmJ1dHRvbiUyMiUyMG9uY2xpY2slM0QlMjJwdXNoKCklMjIlMjB2YWx1ZSUzRCUyMnB1c2glMjIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlM0MlMkZkaXYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlM0Nmb290ZXIlMjBjbGFzcyUzRCUyMmZvb3RlciUyMiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ2RpdiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ2ltZyUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMHNyYyUzRCUyMmh0dHBzJTNBJTJGJTJGY2RuLmdsaXRjaC5nbG9iYWwlMkZiNDY3NDFiNS0zYTdmLTQzYjMtYjYzZi03NDliOGQ1YWRiNTclMkZ0d2l0dGVyX2ljby5zdmclM0Z2JTNEMTY4MTIwMDc4NDU5MiUyMiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGNsYXNzJTNEJTIyaWxsdXN0cmF0aW9uMiUyMiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGlkJTNEJTIydHdpdHRlciUyMiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyRiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ2ltZyUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMHNyYyUzRCUyMmh0dHBzJTNBJTJGJTJGY2RuLmdsaXRjaC5nbG9iYWwlMkZiNDY3NDFiNS0zYTdmLTQzYjMtYjYzZi03NDliOGQ1YWRiNTclMkZ5b3V0dWJlLnBuZyUzRnYlM0QxNjgxMjAzNjE1NTUyJTIyJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwY2xhc3MlM0QlMjJpbGx1c3RyYXRpb24zJTIyJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwaWQlM0QlMjJ5b3V0dWJlJTIyJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTJGJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDaW1nJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwc3JjJTNEJTIyaHR0cHMlM0ElMkYlMkZjZG4uZ2xpdGNoLmdsb2JhbCUyRmI0Njc0MWI1LTNhN2YtNDNiMy1iNjNmLTc0OWI4ZDVhZGI1NyUyRmdpdGh1Yl9pY28ucG5nJTNGdiUzRDE2ODEyMDg4NjM1ODIlMjIlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBjbGFzcyUzRCUyMmlsbHVzdHJhdGlvbjQlMjIlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBpZCUzRCUyMmdpdGh1YiUyMiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyRiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQyUyRmRpdiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUzQ3AlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlRTMlODElOTMlRTMlODElQUUlRTMlODIlQjUlRTMlODIlQTQlRTMlODMlODglRTMlODElQUZHbGl0Y2glRTMlODIlOTIlRTQlQkQlQkYlRTclOTQlQTglRTMlODElOTclRTMlODElQTYlRTMlODElODQlRTMlODElQkUlRTMlODElOTklRTMlODAlODIlRTMlODElQkUlRTMlODElQTAlRTklOTYlOEIlRTclOTklQkElRTQlQjglQUQlRTMlODElQTclRTMlODElOTklRTMlODAlODIlMEElMjAlMjAlMjAlMjAlMjAlMjAlM0MlMkZwJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTNDJTJGZm9vdGVyJTNFJTBBJTIwJTIwJTIwJTIwJTNDJTJGZGl2JTNFJTBBJTIwJTIwJTNDJTJGYm9keSUzRSUwQSUzQyUyRmh0bWwlM0UlMEE=";
+          document.write(decodeURIComponent(atob(code)));
+        }
+      });
+      
+      document.addEventListener("keydown", function (e) {
+        if (e.code == "KeyM") {
+          let code = "JTNDIURPQ1RZUEUlMjBodG1sJTNFJTBBJTNDaHRtbCUyMGxhbmclM0QlMjJqYSUyMiUzRSUwQSUzQ2hlYWQlM0UlMEElM0NtZXRhJTIwY2hhcnNldCUzRCUyMlVURi04JTIyJTNFJTBBJTNDdGl0bGUlM0V0aWMtdGFjLXRvZSUzQyUyRnRpdGxlJTNFJTBBJTNDbGluayUyMHJlbCUzRCUyMnN0eWxlc2hlZXQlMjIlMjBocmVmJTNEJTIyJTJGZ2FtZTMuY3NzJTIyJTNFJTBBJTNDbWV0YSUyMG5hbWUlM0QlMjJ2aWV3cG9ydCUyMiUyMGNvbnRlbnQlM0QlMjJ3aWR0aCUzRDMyMCUyQyUwQSUyMCUyMCUyMCUyMCUyMCUyMGhlaWdodCUzRDQ4MCUyQyUwQSUyMCUyMCUyMCUyMCUyMCUyMGluaXRpYWwtc2NhbGUlM0QxLjAlMkMlMEElMjAlMjAlMjAlMjAlMjAlMjBtaW5pbXVtLXNjYWxlJTNEMS4wJTJDJTBBJTIwJTIwJTIwJTIwJTIwJTIwbWF4aW11bS1zY2FsZSUzRDIuMCUyQyUwQSUyMCUyMCUyMCUyMCUyMCUyMHVzZXItc2NhbGFibGUlM0R5ZXMlMjIlMjAlMkYlM0UlMEElM0MlMkZoZWFkJTNFJTBBJTNDYm9keSUzRSUwQSUzQ2RpdiUyMGlkJTNEJTIydG9wJTIyJTNFJTBBJTNDaDElM0UlRTQlQjglODklRTclOUIlQUUlRTQlQjglQTYlRTMlODElQjklMjAlRTUlODUlODglRTYlOTQlQkIlRTMlODElOEIlRTUlQkUlOEMlRTYlOTQlQkIlRTMlODElOEIlRTklODElQjglRTMlODIlOTMlRTMlODElQTclRTMlODElOEYlRTMlODElQTAlRTMlODElOTUlRTMlODElODQlM0MlMkZoMSUzRSUwQSUzQ3AlMjBpZCUzRCUyMnN0YXJ0JTIyJTNFJUU1JTg1JTg4JUU2JTk0JUJCJTNDJTJGcCUzRSUwQSUzQ3AlMjBpZCUzRCUyMnN0YXJ0MiUyMiUzRSVFNSVCRSU4QyVFNiU5NCVCQiUzQyUyRnAlM0UlMEElM0MlMkZkaXYlM0UlMEElM0NkaXYlMjBpZCUzRCUyMmVuZCUyMiUyMGNsYXNzJTNEJTIyaXMtaGlkZGVuJTIyJTNFJTBBJTNDaDElMjBpZCUzRCUyMmp1ZGdkaXNwbGF5JTIyJTNFJTNDJTJGaDElM0UlMEElM0NwJTIwaWQlM0QlMjJzdGFydDMlMjIlM0UlM0MlMkZwJTNFJTBBJTNDcCUyMGlkJTNEJTIyc3RhcnQ0JTIyJTNFJTNDJTJGcCUzRSUwQSUzQyUyRmRpdiUzRSUwQSUzQyUyRmRpdiUzRSUwQSUzQ2RpdiUyMGlkJTNEJTIyZGlzcGxheSUyMiUyMGNsYXNzJTNEJTIyaXMtaGlkZGVuJTIyJTNFJTBBJTNDaDElM0UlRTQlQjglODklRTclOUIlQUUlRTQlQjglQTYlRTMlODElQjklRTUlQUYlQkUlRTYlODglQTYlRTQlQjglQUQlM0MlMkZoMSUzRSUwQSUzQ2gyJTNFJUUzJTgxJTgyJUUzJTgxJUFBJUUzJTgxJTlGJUUzJTgxJUFFJUU3JTk1JUFBJUUzJTgxJUE3JUUzJTgxJTk5JTNDJTJGaDIlM0UlMEElM0MlMkZkaXYlM0UlMEElM0NkaXYlMjBpZCUzRCUyMmdhbWUlMjIlM0UlMEElM0NkaXYlMjBjbGFzcyUzRCUyMmZpZWxkJTIyJTNFJTNDJTJGZGl2JTNFJTBBJTNDZGl2JTIwY2xhc3MlM0QlMjJmaWVsZCUyMiUzRSUzQyUyRmRpdiUzRSUwQSUzQ2RpdiUyMGNsYXNzJTNEJTIyZmllbGQlMjIlM0UlM0MlMkZkaXYlM0UlMEElM0NkaXYlMjBjbGFzcyUzRCUyMmZpZWxkJTIyJTNFJTNDJTJGZGl2JTNFJTBBJTNDZGl2JTIwY2xhc3MlM0QlMjJmaWVsZCUyMiUzRSUzQyUyRmRpdiUzRSUwQSUzQ2RpdiUyMGNsYXNzJTNEJTIyZmllbGQlMjIlM0UlM0MlMkZkaXYlM0UlMEElM0NkaXYlMjBjbGFzcyUzRCUyMmZpZWxkJTIyJTNFJTNDJTJGZGl2JTNFJTBBJTNDZGl2JTIwY2xhc3MlM0QlMjJmaWVsZCUyMiUzRSUzQyUyRmRpdiUzRSUwQSUzQ2RpdiUyMGNsYXNzJTNEJTIyZmllbGQlMjIlM0UlM0MlMkZkaXYlM0UlMEElM0MlMkZkaXYlM0UlMEElM0NzY3JpcHQlMjB0eXBlJTNEJTIydGV4dCUyRmphdmFzY3JpcHQlMjIlMjBzcmMlM0QlMjIlMkYzbW9rdS5qcyUyMiUzRSUzQyUyRnNjcmlwdCUzRSUwQSUzQyUyRmJvZHklM0UlMEElM0MlMkZodG1sJTNF";
+          document.write(decodeURIComponent(atob(code)));
+        }
+      });
+      
+      document.addEventListener("keydown", function (e) {
+        if (e.code == "KeyC") {
+          let code = "JTNDaHRtbCUzRSUwQSUyMCUyMCUzQ2JvZHklM0UlMEElMjAlMjAlM0NzdHlsZSUyMHR5cGUlM0QlMjJ0ZXh0JTJGY3NzJTIyJTNFJTBBYm9keSUyMCU3QiUwQSUyMCUyMCUyMGJhY2tncm91bmQtY29sb3IlM0ElMjAlMjM0ODZkNDYlM0IlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMkYqJTIwJUU4JTgzJThDJUU2JTk5JUFGJUU4JTg5JUIyJTIwKiUyRiUwQSUyMCUyMCUyMGJhY2tncm91bmQtaW1hZ2UlM0ElMjB1cmwoJTIyaHR0cHMlM0ElMkYlMkZtZWRpYS50ZW5vci5jb20lMkYycm9YM3V4el82OEFBQUFNJTJGY2F0LXNwYWNlLmdpZiUyMiklM0IlMjAlMkYqJTIwJUU3JTk0JUJCJUU1JTgzJThGJTIwKiUyRiUwQSUyMCUyMCUyMGJhY2tncm91bmQtc2l6ZSUzQSUyMGNvdmVyJTNCJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTJGKiUyMCVFNSU4NSVBOCVFNyU5NCVCQiVFOSU5RCVBMiUyMColMkYlMEElMjAlMjAlMjBiYWNrZ3JvdW5kLWF0dGFjaG1lbnQlM0ElMjBmaXhlZCUzQiUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyRiolMjAlRTUlOUIlQkElRTUlQUUlOUElMjAqJTJGJTBBJTIwJTIwJTIwYmFja2dyb3VuZC1wb3NpdGlvbiUzQSUyMGNlbnRlciUyMGNlbnRlciUzQiUyMCUyMCUyMCUyRiolMjAlRTclQjglQTYlRTYlQTglQUElRTQlQjglQUQlRTUlQTQlQUUlMjAqJTJGJTBBJTdEJTBBJTNDJTJGc3R5bGUlM0UlMEElMjAlMjAlM0MlMkZib2R5JTNFJTBBJTNDJTJGaHRtbCUzRQ==";
+          document.write(decodeURIComponent(atob(code)));
+        }
+      });
+      
+      function test() {
+        window.scroll(0,100)
+      }
+      
+function toggle() {
+document.querySelector('.accordion').classList.toggle('open');
+document.querySelector('.menu').classList.toggle('open');
+}
+  
+  function toggle2() {
+document.querySelector('.accordion2').classList.toggle('open');
+document.querySelector('.menu2').classList.toggle('open');
+}  
+  
+  function toggle3() {
+document.querySelector('.accordion3').classList.toggle('open');
+document.querySelector('.menu3').classList.toggle('open');
+}
+    </script>
+      <style type="text/css">
+    .tools {
+  text-align: center;
+    }
+    
+.menu {
+background: #ffffff;
+color: #000000;
+padding: 0px 0 20px 0px;
+cursor: pointer;
+   border: 2px solid #000000;
+    border-radius: 20px;
+}
+        .menu.open {
+background: #ffffcc;
+color: #000000;
+padding: 0px 0 20px 0px;
+cursor: pointer;
+   border: 2px solid #000000;
+    border-radius: 20px;
+        }
+.accordion ul {
+    text-align: center;
+margin: 0;
+background: #ffffff;
+max-height: 0;
+overflow: hidden;
+transition: all .8s;
+}
+.accordion.open ul {
+    text-align: center;
+max-height: 2000px;
+}
+    
+.accordion li {
+    text-align: center;
+padding: 5px 0;
+}
+    
+    
+    .menu2 {
+background: #ffffff;
+color: #000000;
+padding: 0px 0 20px 0px;
+cursor: pointer;
+   border: 2px solid #000000;
+    border-radius: 20px;
+}
+        .menu2.open {
+background: #ffffcc;
+color: #000000;
+padding: 0px 0 20px 0px;
+cursor: pointer;
+   border: 2px solid #000000;
+    border-radius: 20px;
+        }
+.accordion2 ul {
+    text-align: center;
+margin: 0;
+background: #ffffff;
+max-height: 0;
+overflow: hidden;
+transition: all .8s;
+}
+.accordion2.open ul {
+    text-align: center;
+max-height: 2000px;
+}
+    
+.accordion2 li {
+    text-align: center;
+padding: 5px 0;
+}
+        
+    
+    .menu3 {
+background: #ffffff;
+color: #000000;
+padding: 0px 0 20px 0px;
+cursor: pointer;
+   border: 2px solid #000000;
+    border-radius: 20px;
+}
+        .menu3.open {
+background: #ffffcc;
+color: #000000;
+padding: 0px 0 20px 0px;
+cursor: pointer;
+   border: 2px solid #000000;
+    border-radius: 20px;
+        }
+.accordion3 ul {
+    text-align: center;
+margin: 0;
+background: #ffffff;
+max-height: 0;
+overflow: hidden;
+transition: all .8s;
+}
+.accordion3.open ul {
+    text-align: center;
+max-height: 2000px;
+}
+    
+.accordion3 li {
+    text-align: center;
+padding: 5px 0;
+}
+        
+        
+.hub{
+	display: inline-block;
+	position: relative;
+	color: #000000;
+ 	text-decoration: none;
+}
+.hub:before{
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 100%;
+	height: 3px;
+	background: #000000;
+	transform: scale(0, 0);
+	transition: 0.4s;
+}
+.hub:hover:before {
+	transform: scale(1);
+}
+        
+        
+.bush{
+	display: inline-block;
+	color: #ff3300;
+ 	text-decoration: none;
+	position: relative;
+}
+.bush:before{
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 100%;
+	height: 3px;
+	background: #ff3300;
+	transform: scale(0, 0);
+	transition: 0.4s;
+}
+.bush:hover:before {
+	transform: scale(1);
+}
+  </style>
+  </head>
+  <nav class="top">
+    <a href="https://skikozou.glitch.me/home.html" class="topbar">ホーム</a
+    >・
+    <a href="https://skikozou.glitch.me/info.html" class="topbar"
+      >本サイトについて</a
+    >・
+    <a href="https://skikozou.glitch.me/explanation.html" class="topbar"
+      >開発者のプロフィール</a
+    >・
+    <a href="https://skikozou.glitch.me/license.html" class="topbar"
+      >利用規約</a
+    >・
+              <a href="https://note.com/skikozou/" class="topbar">note</a>
+    <a class="topbar2">(c) 2023 skikozou</a>
+  </nav>
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <br /><br /><br />
+        <h1 class="title">skikozou's web site</h1>
+        <img
+          src="https://pbs.twimg.com/profile_images/1616684333196251138/iaPzfmZP_400x400.jpg"
+          class="illustration"
+             href="https://skikozou.glitch.me/explanation.html"
+        />
+        <div class="instructions">
+          <h2>ようこそ！skikozouのサイトへ！</h2>
+          <p>
+            ここでは便利なwebツールやミニゲームなどのサービスを提供しています<br>
+            まだまだ開発中なので追加してほしいものなどあったらtwitterもしくはdiscordでご連絡ください<br>
+            また、<a href="https://note.com/skikozou">note</a>もやっているのでぜひそちらも見てください<br>
+          </p>
+        </div>
+          <h3>サービスリスト</h3>
+        <div class="tools">
+    <div class="accordion">
+<div class="menu" onclick="toggle()"><br>
+web tools<br>
+</div>
+<ul>
+        <br>
+  <h1>web tools</h1>
+        <a href="javascript:alert('このサービスは現在ご利用頂けません')" class="bush">串サイト</a>
+        <p>プロクシ Glype proxy使用(今は死んでる)</p>
+        <a href="/qrcreate.html" class="hub">QRコード作成</a>
+        <p>任意の文字列またはURLでQRコードを生成してくれます</p>
+        <a href="/random.html" class="hub">乱数生成(数字)</a>
+        <p>指定した桁数で乱数を生成します</p>
+        <a href="/random2.html" class="hub">乱数生成(文字列)</a>
+        <p>指定した文字数でランダムな文字列を生成します</p>
+        <a href="/count.html" class="hub">文字数カウント</a>
+        <p>文字数をカウント</p>
+        <a href="/googlelink.html" class="hub">Google link</a>
+        <p>Google検索のあの長ったらしいリンクを簡易版にします</p>
+        <a href="/replace.html" class="hub">置き換え</a>
+        <p>指定の文字を置き換えます</p>
+        <a href="/base64.html" class="hub">base64</a>
+        <p>base64でエンコード、デコードをします</p>
+        <a href="/base64_v2.html" class="hub">base64(roop)</a>
+        <p>base64で複数回のエンコード、デコードをします</p>
+        <a href="/crypter.html" class="hub">AES暗号</a>
+        <p>テキストを暗号化します</p>
+        <a href="/json_maker.html" class="hub">json maker</a>
+        <p>値と名前をjson形式にします</p>
+</ul>
+</div>
+  
+    <div class="accordion2">
+<div class="menu2" onclick="toggle2()"><br>
+mini games<br>
+</div>
+<ul>
+        <br>
+  <h1>mini games</h1>
+        <a href="/piano.html" class="hub">ピアノタイル</a>
+        <p>web版ピアノタイル</p>
+        <a href="/minigame2.html" class="hub">2048</a>
+        <p>あの懐かしのゲームを完全再現⁉</p>
+        <a href="/minigame1.html" class="hub">神経衰弱</a>
+        <p>神経衰弱(数あて)</p>
+</ul>
+</div>
+  
+    <div class="accordion3">
+<div class="menu3" onclick="toggle3()"><br>
+others<br>
+</div>
+<ul>
+        <br>
+  <h1>others</h1>
+        <a href="/cookie.html" class="hub">cookieポリシー</a>
+        <p>確認必須!</p>
+        <a href="https://note.com/skikozou" class="hub">note</a>
+        <p>誰でも見れるメモとして使います</p>
+        <a href="/file.html" class="hub">ファイル倉庫</a>
+        <p>重要なファイルを保存しています</p>
+        <a href="https://glitch.com/edit/#!/skikozou" class="hub">ソースコード</a>
+        <p>glitch垢なくても見れる...はず?</p>
+        <a href="/progress.html" class="hub">途中経過</a>
+        <p>このサイトの道のり</p>
+  
+</ul>
+</div>
+  </div>
+
+        <!--
+<a href="/link.html" class="hub">title</a>
+<p>info</p>
+        -->
+         
+      </div>
+      <footer class="footer">
+        <div>
+          <img
+            src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/twitter_ico.svg?v=1681200784592"
+            class="illustration2"
+            id="twitter"
+          />
+          <img
+            src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/youtube.png?v=1681203615552"
+            class="illustration3"
+            id="youtube"
+          />
+          <img
+            src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/github_ico.png?v=1681208863582"
+            class="illustration4"
+            id="github"
+          />
+        </div>
+        <p>このサイトはGlitchを使用しています。まだ開発中です。</p>
+      </footer>
+    </div>
+  </body>
+</html>

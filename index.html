@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://pbs.twimg.com/profile_images/1616684333196251138/iaPzfmZP_400x400.jpg" />
+
+    <title>skikozouの部屋</title>
+
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/script.js" defer></script>
+    <script>
+      if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
+        alert("現在、スマートフォン及びタブレットには対応しておりません。\n近いうちに対応させるので今しばらくお待ち下さい。\n対応するまで僕のtwitterフォローしといてください");
+        window.open("https://twitter.com/@skikozou1596","_self")
+      }else{
+        
+      }
+  document.cookie = "license=consent";
+      
+      if (Cookies.get("index")=="skip") {
+        window.open("https://skikozou.glitch.me/home.html","_self")
+      }
+    </script>
+  </head>
+  <nav class="top">
+    <a href="https://skikozou.glitch.me/home.html" class="topbar">ホーム</a
+    >・
+    <a href="https://skikozou.glitch.me/info.html" class="topbar"
+      >本サイトについて</a
+    >・
+    <a href="https://skikozou.glitch.me/explanation.html" class="topbar"
+      >開発者のプロフィール</a
+    >・
+    <a href="https://skikozou.glitch.me/license.html" class="topbar"
+      >利用規約</a
+    >・
+              <a href="https://note.com/skikozou/" class="topbar">note</a>
+    <a class="topbar2">(c) 2023 skikozou</a>
+        </nav>
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div class="instructions">
+          <div class="center">
+            <h1>
+            skikozouの部屋へようこそ！
+          </h1>
+          <h3>
+            ここでは便利なwebツールやミニゲームなどのサービスを提供しています<br>
+            まだまだ開発中なので追加してほしいものなどあったらtwitterもしくはdiscordでご連絡ください<br>
+            本サイトをご利用するにあたって<a href="https://skikozou.glitch.me/license.html">利用規約</a>と
+            <a href="https://skikozou.glitch.me/cookie.html">cookieポリシー</a>を必ずお確かめください<br>            
+            本サイトの利用規約に同意できるならば以下のボタンを押し、ご利用を開始してください<br>
+            また、cookie利用への同意は任意です<br>
+          </h3>
+            <input onclick="start()" type="button" value="利用規約に同意してこのサイトを利用する">
+            <input onclick="nolic()" type="button" value="利用規約に同意しない">
+          </div>
+          <div class="center">
+            <a href='javascript:document.cookie = "license=consent";document.cookie = "index=skip";alert("設定を保存しました!");window.open("https://skikozou.glitch.me/home.html","_self")'>利用規約に同意し、次からこのページをスキップする</a>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div>
+          <img
+          src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/twitter_ico.svg?v=1681200784592"
+          class="illustration2"
+          id="twitter"
+        />
+        <img
+          src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/youtube.png?v=1681203615552"
+          class="illustration3"
+          id="youtube"
+        />
+          <img
+          src="https://cdn.glitch.global/b46741b5-3a7f-43b3-b63f-749b8d5adb57/github_ico.png?v=1681208863582"
+          class="illustration4"
+          id="github"
+        />
+        </div>
+      <p>
+        このサイトはGlitchを使用しています。まだ開発中です。
+      </p>
+      </footer>
+    </div>
+  </body>
+</html>
