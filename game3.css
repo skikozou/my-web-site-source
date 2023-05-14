@@ -1,1 +1,13 @@
+/*
+******************************************************************************************************************************************************************************************
+
+Oops!
+You saw the source code for this site.
+You are free to think what you like about this code, but please note that the copyright belongs to skikozou.
+Please remember this when you look at the source code of this site in the future.
+If you make something using the source code of this site and publish it, it would be good if you could let skikozou know so that there will be less misunderstanding.
+
+******************************************************************************************************************************************************************************************
+*/
+
 div.is-hidden{display:none}div.is-visible{display:block}body{text-align:center;user-select:none}h1{padding:10px;margin:auto;font-weight:700;color:#6091d3}h2{padding:26px;margin:auto}p{padding:10px;margin:auto;width:300px;font-weight:700;color:#6091d3}#start:hover{background:#6091d3;color:#fff;cursor:pointer}#start2:hover{background:#6091d3;color:#fff;cursor:pointer}#start3:hover{background:#6091d3;color:#fff;cursor:pointer}#start4:hover{background:#6091d3;color:#fff;cursor:pointer}#game{margin-right:auto;margin-left:auto;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;align-content:stretch;width:400px}#game.pointer-none{pointer-events:none}.field{width:100px;height:100px;padding:0;margin:0;color:#6091d3;border:solid 3px #6091d3;border-radius:10px}.field:hover{background:#f3ece3;border:2px solid #333;cursor:pointer}#top{height:25%}

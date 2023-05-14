@@ -126,4 +126,19 @@
   <priority>0.8</priority>
   <lastmod>2023-04-20T21:29:37+09:00</lastmod>
 </url>
+<url>
+  <loc>https://skikozou.glitch.me/client_data_viewer.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2023-04-20T21:29:37+09:00</lastmod>
+</url>
+<url>
+  <loc>https://skikozou.glitch.me/openlink.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2023-04-20T21:29:37+09:00</lastmod>
+</url>
+<url>
+  <loc>https://skikozou.glitch.me/iframe.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2023-04-20T21:29:37+09:00</lastmod>
+</url>
 </urlset>
