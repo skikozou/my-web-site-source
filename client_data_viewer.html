@@ -17,11 +17,13 @@ If you make something using the source code of this site and publish it, it woul
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="https://pbs.twimg.com/profile_images/1616684333196251138/iaPzfmZP_400x400.jpg" />
 
-    <title>skikozou | </title>
+    <title>skikozou | ユーザー情報表示</title>
 
     <link rel="stylesheet" href="/style.css" />
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="/script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/platform/1.3.6/platform.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/platform/1.3.6/platform.js"></script>
     <script>
       if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
         alert("現在、スマートフォン及びタブレットには対応しておりません。\n近いうちに対応させるので今しばらくお待ち下さい。\n対応するまで僕のtwitterフォローしといてください");
@@ -32,7 +34,48 @@ If you make something using the source code of this site and publish it, it woul
       if (Cookies.get("license")=="Noconsent") {
         window.open("https://skikozou.glitch.me/","_self")
       }
+      var date_ins = new Date();
       
+      window.onload = onLoad;
+
+    function onLoad() {
+      //変数リスト ==>  time , ip , UA , OS , browser , size
+      var month = Number(date_ins.getMonth()) + 1;
+      var time = 	date_ins.getFullYear()+"/"+month+"/"+date_ins.getDate()+" "+date_ins.getHours()+":"+date_ins.getMinutes()+":"+date_ins.getSeconds()+":"+date_ins.getMilliseconds();
+      var ip = "";
+      fetch('https://ipinfo.io?callback')
+      .then(res => res.json())
+      .then(json => ip = localStorage.setItem("ip", json.ip))
+      var ip = localStorage.getItem("ip");
+      var ip = '<th id="ip">'+ip+'<a href="https://ja.ipshu.com/ipv4/'+ip+'"> IPSHUで確認する</a></th>';
+      localStorage.removeItem("ip");
+      var UA = navigator.userAgent;
+      var os = platform.os.toString().toLowerCase();
+      var browser = platform.name+" "+platform.version;
+      var size = 	screen.width+"px / "+screen.height+"px";
+      //htmlに書き込み
+      var output = document.getElementById("day");
+      output.innerHTML = time;
+      console.log(time);
+      var output = document.getElementById("ip");
+      output.innerHTML = ip;
+      console.log(ip);
+      var output = document.getElementById("ua");
+      output.innerHTML = UA;
+      console.log(UA);
+      var output = document.getElementById("os");
+      output.innerHTML = os;
+      console.log(os);
+      var output = document.getElementById("browser");
+      output.innerHTML = browser;
+      console.log(browser);
+      var output = document.getElementById("screen");
+      output.innerHTML = size;
+      console.log(size);
+    }
+      
+      function reload_get() {
+      }
     </script>
   </head>
   <nav class="top">
@@ -52,8 +95,41 @@ If you make something using the source code of this site and publish it, it woul
   </nav>
   <body>
     <div class="wrapper">
+      <br><br>
       <div class="content" role="main">
-        <!ここに書きたいことを書く>
+        <h1>ユーザー情報表示</h1>
+        <h3>このサイトで取得されたデータはすべてユーザーのデバイスで完結します<br>サーバーに取得されたデータが送られることはありません</h3><br>
+        <h3>ユーザーデータ</h3>
+        <table border="1">
+    <tr>
+      <th>項目</th>
+      <th>データ</th>
+    </tr>
+    <tr>
+      <th>現在時刻</th>
+      <th id="day"></th>
+    </tr>
+    <tr>
+      <th>IPアドレス</th>
+      <th id="ip"></th>
+    </tr>
+    <tr>
+      <th>User Agent</th>
+      <th id="ua"></th>
+    </tr>
+    <tr>
+      <th>OS</th>
+      <th id="os"></th>
+    </tr>
+    <tr>
+      <th>browser</th>
+      <th id="browser"></th>
+    </tr>
+    <tr>
+      <th>screen size</th>
+      <th id="screen"></th>
+    </tr>
+  </table><br>
       </div>
       <footer class="footer">
         <div>

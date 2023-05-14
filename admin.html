@@ -1,3 +1,14 @@
+<!--
+******************************************************************************************************************************************************************************************
+
+Oops!
+You saw the source code for this site.
+You are free to think what you like about this code, but please note that the copyright belongs to skikozou.
+Please remember this when you look at the source code of this site in the future.
+If you make something using the source code of this site and publish it, it would be good if you could let skikozou know so that there will be less misunderstanding.
+
+******************************************************************************************************************************************************************************************
+-->
 <html>
   <script>
       if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
@@ -52,11 +63,18 @@
       window.open("https://skikozou.glitch.me/scriptTest.html","_blank","menubar=0,width=300,height=200,top=100,left=100")
     }
     
-    
+    var n = 0;
+    function copy() {
+      n++;
+      navigator.clipboard.writeText(n);
+      var text = document.getElementById("t1").textContent;
+      document.getElementById("t1").textContent = "text copyed!";
+    }
   </script>
   <input type="button" value="key" onclick="k()">
   <input type="button" value="list" onclick="lists2()">
   <input type="button" value="reset" onclick="reset()">
   <input type="button" value="現在地" onclick="window1()">
+  <input type="button" value="clip boad" onclick="copy()">
   <a id="t1"></a>
 </html>

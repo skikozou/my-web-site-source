@@ -17,7 +17,7 @@ If you make something using the source code of this site and publish it, it woul
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="https://pbs.twimg.com/profile_images/1616684333196251138/iaPzfmZP_400x400.jpg" />
 
-    <title>skikozou | </title>
+    <title>skikozou | open link</title>
 
     <link rel="stylesheet" href="/style.css" />
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
@@ -33,6 +33,10 @@ If you make something using the source code of this site and publish it, it woul
         window.open("https://skikozou.glitch.me/","_self")
       }
       
+      function go() {
+        var url = document.getElementById("url").value;
+        window.open(url,"_self");
+      }
     </script>
   </head>
   <nav class="top">
@@ -53,7 +57,10 @@ If you make something using the source code of this site and publish it, it woul
   <body>
     <div class="wrapper">
       <div class="content" role="main">
-        <!ここに書きたいことを書く>
+        <h1>open link</h1>
+        <h3>リンクを直接入力できない方用です</h3>
+        <input type="text" id="url" placeholder="URL">
+        <input type="button" onclick="go()" value="go!">
       </div>
       <footer class="footer">
         <div>
