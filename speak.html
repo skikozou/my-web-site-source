@@ -17,16 +17,45 @@ If you make something using the source code of this site and publish it, it woul
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="https://pbs.twimg.com/profile_images/1616684333196251138/iaPzfmZP_400x400.jpg" />
 
-    <title>skikozou | プロフィール</title>
+    <title>skikozou | web合成音声</title>
 
     <link rel="stylesheet" href="/style.css" />
-
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="/script.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script>
       if (Cookies.get("license")=="Noconsent") {
         window.open("https://skikozou.glitch.me/","_self")
       }
+      
+      function readAloud() {
+  // テキストを取得
+
+  // ブラウザにWeb Speech API Speech Synthesis機能があるか判定
+  if ('speechSynthesis' in window) {
+    // 発言を設定 (必須)
+    const uttr = new SpeechSynthesisUtterance()
+
+    // テキストを設定 (必須)
+    uttr.text = document.getElementById("text").value;
+
+    // 言語を設定
+    uttr.lang = "ja-JP"
+
+    // 速度を設定
+    uttr.rate = 1
+
+    // 高さを設定
+    uttr.pitch = 1
+
+    // 音量を設定
+    uttr.volume = 1
+
+    // 発言を再生 (必須)
+    window.speechSynthesis.speak(uttr)
+  } else {
+    alert('大変申し訳ありません。このブラウザは音声合成に対応していません。')
+  }
+}
     </script>
   </head>
   <nav class="top">
@@ -38,48 +67,13 @@ If you make something using the source code of this site and publish it, it woul
     <a class="topbar2">(c) 2023 skikozou</a>
   </nav>
   <body>
-    
     <div class="wrapper">
-      <br><br>
       <div class="content" role="main">
-        <h1>
-          skikozouをざっくり言うと
-        </h1>
-        <h3>
-          C#を得意とする学生です<br>
-          最近は古明地フランさんに送りつける用のマルウェアを作ってたりします<br>
-          discordのbot開発なんかもやってます<br>
-          リアルではアルペンスキーをやっています<br>
-        </h3>
-        <h1>
-          できること
-        </h1>
-        <h3>
-          C# ･･･ <br>windows formをメインで作成しています<br><br>
-          マイクラ ･･･ <br>一応赤石回路の基本的なものなら組めます<br>PVPは中の下くらいです<br>建築力はマイナス突破しています(たぶん-100くらい)<br>コマンドはまあまあできる方です<br><br>
-          スキー ･･･ スキー検定1級持ってます<br>自分で言ってもあまり信用されないような気がしますが上級者です<br>アルペンスキーをメインでやっています<br>
-          有名所のスキー大会(全中など)とかだと15~30位くらいは余裕で取れる実力です
-        </h3>
-        <h1>
-          アドレス
-        </h1>
-        <h3>
-          <a href="https://twitter.com/skikozou1596">Twitter</a>:skikozou<br><br>
-          <a href="https://twitter.com/slxjlx020v">Twitter sub</a>:slxjlx020v<br><br>
-          <a href="mailto:xxxskikozouxxx@gmail.com">メール</a>:xxxskikozouxxx@gmail.com<br><br>
-          <a href="https://github.com/skikozou">Github</a>:skikozou<br><br>
-          <a href="https://www.youtube.com/@skikozou">Youtube</a>:skikozou<br><br>
-          discord:skikozou#1263<br><br>
-          <a href="https://misskey.io/@skikozou">misskey</a>skikozou@misskey.io<br><br>
-        </h3>
-        <h3>
-          冬はスキーで忙しいのであまりプログラミングはしていません<br>
-          Twitter垢をフォローしていただくと喜びます
-        </h3>
-        <h5>説明<br>
-          スキー検定1級:<a href="https://snowjapanlicense.jp/skilevel5-1/#grade1">日本スキー連盟</a><br>
-          全中:<a href="https://nozawazenchu.com/">野沢温泉スキー場</a>
-        </h5>
+        <h1>web合成音声</h1>
+        <h3>web上で合成音声を作れます</h3>
+        <textarea id="text" rows="10" cols="100"></textarea>
+        <input type="button" value="読み上げる" onclick="readAloud()">
+      </div>
       <footer class="footer">
         <div>
           <img
@@ -102,7 +96,6 @@ If you make something using the source code of this site and publish it, it woul
         このサイトはGlitchを使用しています。まだ開発中です。
       </p>
       </footer>
-    </div>
     </div>
   </body>
 </html>

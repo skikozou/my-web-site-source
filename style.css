@@ -337,3 +337,7 @@ nav {
 transition: all  0.3s ease;
   
 }
+
+::selection {
+  background-color: #ffff99;
+}
