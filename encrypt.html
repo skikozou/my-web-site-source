@@ -9,6 +9,9 @@ Please remember this when you look at the source code of this site in the future
 If you make something using the source code of this site and publish it, it would be good if you could let skikozou know so that there will be less misunderstanding.
 
 ******************************************************************************************************************************************************************************************
+
+もう無理ぽ＼(^o^)／
+
 -->
 <html lang="ja">
   <head>
@@ -23,12 +26,6 @@ If you make something using the source code of this site and publish it, it woul
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="/script.js" defer></script>
     <script>
-      if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
-        alert("現在、スマートフォン及びタブレットには対応しておりません。\n近いうちに対応させるので今しばらくお待ち下さい。\n対応するまで僕のtwitterフォローしといてください");
-        window.open("https://twitter.com/@skikozou1596","_self")
-      }else{
-        
-      }
       if (Cookies.get("license")=="Noconsent") {
         window.open("https://skikozou.glitch.me/","_self")
       }
@@ -37,80 +34,44 @@ If you make something using the source code of this site and publish it, it woul
       // https://gist.github.com/seekseep/e5c289791265dafee786640942ee2e4d
       
       // string -> byte[]
-function string2bytes(string) {
+      
+      function string2bytes(string) {
     var bytes = string.split('').map(char => char.charCodeAt(0))
     return bytes;
 }
-
-// byte[] -> string
-function bytes2string(bytes) {
-    var string = bytes.map(byte => String.fromCharCode(byte)).join('');
-    return string;
-}
-      // byte[] -> hex[]
-function bytes2hexs(bytes) {
+      
+      function bytes2hexs(bytes) {
     var hexs = bytes.map(byte => byte.toString(16));
     return hexs;
 }
-
-// hex[] -> hex
-function hexs2hex(hexs) {
-    var hex = hexs.join('');
-    return hex;
+      
+      function bytes2string(bytes) {
+    var string = bytes.map(byte => String.fromCharCode(byte)).join('');
+    return string;
 }
-
-// hex -> hex[]
-function hex2hexs(hex) {
-    var hexs = [];
-    for (var i = 0; i < hex.length; i += 2) {
-        hexs.push(hex.substr(i, 2));
-    }
-    return hexs;
-}
-
-// hex[] -> byte[]
-function hexs2bytes(hexs) {
+      
+      function hexs2bytes(hexs) {
     var bytes = hexs.map(hex => parseInt(hex, 16));
     return bytes;
 }
-
       
       function encrypt() {
-        //入力
-        var input = document.getElementById("text").value;
-        var out = string2bytes(input);
-        var a = parseInt(out, 2);
-        var b = a.replace(/[^0-9]/g, '');
-        //出力
-        var text = document.getElementById("out").textContent;
-        document.getElementById("out").textContent = b;
+        var input = string2bytes("text");
+        var out = input.split("0");
+        var out = out.join(":");
+        console.log(out);
       }
       
-      function decrypt() {
-        //入力
-        var input = document.getElementById("text").value;
-        var out = bytes2string(input);
-        //出力
-        var text = document.getElementById("out").textContent;
-        document.getElementById("out").textContent = out;
-      }
     </script>
   </head>
   <nav class="top">
-    <a href="https://skikozou.glitch.me/home.html" class="topbar">ホーム</a
-    >・
-    <a href="https://skikozou.glitch.me/info.html" class="topbar"
-      >本サイトについて</a
-    >・
-    <a href="https://skikozou.glitch.me/explanation.html" class="topbar"
-      >開発者のプロフィール</a
-    >・
-    <a href="https://skikozou.glitch.me/license.html" class="topbar"
-      >利用規約</a
-    >・
-              <a href="https://note.com/skikozou/" class="topbar">note</a>
+    <a href="https://skikozou.glitch.me/home.html" class="topbar">ホーム</a>・
+    <a href="https://skikozou.glitch.me/info.html" class="topbar">本サイトについて</a>・
+    <a href="https://skikozou.glitch.me/explanation.html" class="topbar">開発者のプロフィール</a>・
+    <a href="https://skikozou.glitch.me/license.html" class="topbar">利用規約</a>・
+    <a href="https://note.com/skikozou/" class="topbar">note</a>
     <a class="topbar2">(c) 2023 skikozou</a>
-        </nav>
+  </nav>
   <body>
     <div class="wrapper">
       <br><br>

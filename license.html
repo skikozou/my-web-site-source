@@ -23,12 +23,6 @@ If you make something using the source code of this site and publish it, it woul
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="/script.js" defer></script>
     <script>
-      if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
-        alert("現在、スマートフォン及びタブレットには対応しておりません。\n近いうちに対応させるので今しばらくお待ち下さい。\n対応するまで僕のtwitterフォローしといてください");
-        window.open("https://twitter.com/@skikozou1596","_self")
-      }else{
-        
-      }
       document.addEventListener("keydown", function (e) {
       if (e.code == "KeyP") {
           let code = "JTNDIURPQ1RZUEUlMjBodG1sJTNFJTBBJTNDaHRtbCUyMGxhbmclM0QlMjJqYSUyMiUzRSUwQSUyMCUyMCUzQ2hlYWQlM0UlMEElMEElMjAlMjAlMjAlMjAlM0NtZXRhJTIwY2hhcnNldCUzRCUyMnV0Zi04JTIyJTIwJTJGJTNFJTBBJTIwJTIwJTIwJTIwJTNDbWV0YSUyMG5hbWUlM0QlMjJ2aWV3cG9ydCUyMiUyMGNvbnRlbnQlM0QlMjJ3aWR0aCUzRGRldmljZS13aWR0aCUyQyUyMGluaXRpYWwtc2NhbGUlM0QxJTIyJTIwJTJGJTNFJTBBJTIwJTIwJTIwJTIwJTNDbGluayUyMHJlbCUzRCUyMmljb24lMjIlMjBocmVmJTNEJTIyaHR0cHMlM0ElMkYlMkZwYnMudHdpbWcuY29tJTJGcHJvZmlsZV9pbWFnZXMlMkYxNjE2Njg0MzMzMTk2MjUxMTM4JTJGaWFQemZtWlBfNDAweDQwMC5qcGclMjIlMjAlMkYlM0UlMEElMEElMjAlMjAlMjAlMjAlM0N0aXRsZSUzRXNraWtvem91JTIwJTdDJTIwJUU1JTg4JUE5JUU3JTk0JUE4JUU4JUE2JThGJUU3JUI0JTg0JTNDJTJGdGl0bGUlM0UlMEElMEElMjAlMjAlMjAlMjAlM0NsaW5rJTIwcmVsJTNEJTIyc3R5bGVzaGVldCUyMiUyMGhyZWYlM0QlMjIlMkZzdHlsZS5jc3MlMjIlMjAlMkYlM0UlMEElM0NzY3JpcHQlMjBzcmMlM0QlMjJodHRwcyUzQSUyRiUyRmNkbi5qc2RlbGl2ci5uZXQlMkZucG0lMkZqcy1jb29raWUlNDAyJTJGc3JjJTJGanMuY29va2llLm1pbi5qcyUyMiUzRSUzQyUyRnNjcmlwdCUzRSUwQSUyMCUyMCUyMCUyMCUzQ3NjcmlwdCUyMHNyYyUzRCUyMiUyRnNjcmlwdC5qcyUyMiUyMGRlZmVyJTNFJTNDJTJGc2NyaXB0JTNFJTBBJTIwJTIwJTIwJTIwJTNDc2NyaXB0JTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwaWYlMjAoZS5jb2RlJTIwJTNEJTNEJTIwJTIyS2V5VyUyMiklMjAlN0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBsZXQlMjBjb2RlJTIwJTNEJTIwJTIyJTIyJTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwZG9jdW1lbnQud3JpdGUoZGVjb2RlVVJJQ29tcG9uZW50KGF0b2IoY29kZSkpKSUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3RCUwQSUyMCUyMCUyMCUyMCUzQyUyRnNjcmlwdCUzRSUwQSUyMCUyMCUzQyUyRmhlYWQlM0UlMEElMjAlMjAlM0NuYXYlMjBjbGFzcyUzRCUyMnRvcCUyMiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ2ElMjBocmVmJTNEJTIyaHR0cHMlM0ElMkYlMkZza2lrb3pvdS5nbGl0Y2gubWUlMkZob21lLmh0bWwlMjIlMjBzdHlsZSUzRCUyMiFpbXBvcnRhbnQlM0IlMjIlM0UlRTMlODMlOUIlRTMlODMlQkMlRTMlODMlQTAlM0MlMkZhJTNFJUUzJTgzJUJCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDYSUyMGhyZWYlM0QlMjJodHRwcyUzQSUyRiUyRnNraWtvem91LmdsaXRjaC5tZSUyRmluZm8uaHRtbCUyMiUyMHN0eWxlJTNEJTIyIWltcG9ydGFudCUzQiUyMiUzRSVFNiU5QyVBQyVFMyU4MiVCNSVFMyU4MiVBNCVFMyU4MyU4OCVFMyU4MSVBQiVFMyU4MSVBNCVFMyU4MSU4NCVFMyU4MSVBNiUzQyUyRmElM0UlRTMlODMlQkIlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NhJTIwaHJlZiUzRCUyMmh0dHBzJTNBJTJGJTJGc2tpa296b3UuZ2xpdGNoLm1lJTJGZXhwbGFuYXRpb24uaHRtbCUyMiUyMHN0eWxlJTNEJTIyIWltcG9ydGFudCUzQiUyMiUzRSVFOSU5NiU4QiVFNyU5OSVCQSVFOCU4MCU4NSVFMyU4MSVBRSVFMyU4MyU5NyVFMyU4MyVBRCVFMyU4MyU5NSVFMyU4MiVBMyVFMyU4MyVCQyVFMyU4MyVBQiUzQyUyRmElM0UlRTMlODMlQkIlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NhJTIwaHJlZiUzRCUyMmh0dHBzJTNBJTJGJTJGc2tpa296b3UuZ2xpdGNoLm1lJTJGbGljZW5zZS5odG1sJTIyJTIwc3R5bGUlM0QlMjIhaW1wb3J0YW50JTNCJTIyJTNFJUU1JTg4JUE5JUU3JTk0JUE4JUU4JUE2JThGJUU3JUI0JTg0JTNDJTJGYSUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMChjKSUyMDIwMjMlMjBza2lrb3pvdSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQyUyRm5hdiUzRSUwQSUyMCUyMCUzQ2JvZHklM0UlMEElMjAlMjAlMjAlMjAlM0NkaXYlMjBjbGFzcyUzRCUyMndyYXBwZXIlMjIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlM0NiciUzRSUzQ2JyJTNFJTNDYnIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlM0NkaXYlMjBjbGFzcyUzRCUyMmNvbnRlbnQlMjIlMjByb2xlJTNEJTIybWFpbiUyMiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ2gxJTNFJTBBJTA5JTA5JTIwJTIwJUU0JUJGJUJBJUUzJTgxJUFCcGV5cGV5JUUzJTgxJThGJUUzJTgyJThDJTBBJTA5JTA5JTIwJTIwJTNDJTJGaDElM0UlMEElMDklMDklMjAlMjAlM0NoMyUzRSUwQSUwOSUwOSUyMCUyMCVFNCVCQiVBNSVFNCVCOCU4QSUwQSUwOSUwOSUyMCUyMCUzQyUyRmgzJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTNDJTJGZGl2JTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTNDZm9vdGVyJTIwY2xhc3MlM0QlMjJmb290ZXIlMjIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NkaXYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NpbWclMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBzcmMlM0QlMjJodHRwcyUzQSUyRiUyRmNkbi5nbGl0Y2guZ2xvYmFsJTJGYjQ2NzQxYjUtM2E3Zi00M2IzLWI2M2YtNzQ5YjhkNWFkYjU3JTJGdHdpdHRlcl9pY28uc3ZnJTNGdiUzRDE2ODEyMDA3ODQ1OTIlMjIlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBjbGFzcyUzRCUyMmlsbHVzdHJhdGlvbjIlMjIlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBpZCUzRCUyMnR3aXR0ZXIlMjIlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMkYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NpbWclMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBzcmMlM0QlMjJodHRwcyUzQSUyRiUyRmNkbi5nbGl0Y2guZ2xvYmFsJTJGYjQ2NzQxYjUtM2E3Zi00M2IzLWI2M2YtNzQ5YjhkNWFkYjU3JTJGeW91dHViZS5wbmclM0Z2JTNEMTY4MTIwMzYxNTU1MiUyMiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGNsYXNzJTNEJTIyaWxsdXN0cmF0aW9uMyUyMiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGlkJTNEJTIyeW91dHViZSUyMiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyRiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ2ltZyUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMHNyYyUzRCUyMmh0dHBzJTNBJTJGJTJGY2RuLmdsaXRjaC5nbG9iYWwlMkZiNDY3NDFiNS0zYTdmLTQzYjMtYjYzZi03NDliOGQ1YWRiNTclMkZnaXRodWJfaWNvLnBuZyUzRnYlM0QxNjgxMjA4ODYzNTgyJTIyJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwY2xhc3MlM0QlMjJpbGx1c3RyYXRpb240JTIyJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwaWQlM0QlMjJnaXRodWIlMjIlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMkYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0MlMkZkaXYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlM0NwJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJUUzJTgxJTkzJUUzJTgxJUFFJUUzJTgyJUI1JUUzJTgyJUE0JUUzJTgzJTg4JUUzJTgxJUFGR2xpdGNoJUUzJTgyJTkyJUU0JUJEJUJGJUU3JTk0JUE4JUUzJTgxJTk3JUUzJTgxJUE2JUUzJTgxJTg0JUUzJTgxJUJFJUUzJTgxJTk5JUUzJTgwJTgyJUUzJTgxJUJFJUUzJTgxJUEwJUU5JTk2JThCJUU3JTk5JUJBJUU0JUI4JUFEJUUzJTgxJUE3JUUzJTgxJTk5JUUzJTgwJTgyJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTNDJTJGcCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUzQyUyRmZvb3RlciUzRSUwQSUyMCUyMCUyMCUyMCUzQyUyRmRpdiUzRSUwQSUyMCUyMCUzQyUyRmJvZHklM0UlMEElM0MlMkZodG1sJTNFJTBB";
@@ -38,20 +32,13 @@ If you make something using the source code of this site and publish it, it woul
     </script>
   </head>
   <nav class="top">
-    <a href="https://skikozou.glitch.me/home.html" class="topbar">ホーム</a
-    >・
-    <a href="https://skikozou.glitch.me/info.html" class="topbar"
-      >本サイトについて</a
-    >・
-    <a href="https://skikozou.glitch.me/explanation.html" class="topbar"
-      >開発者のプロフィール</a
-    >・
-    <a href="https://skikozou.glitch.me/license.html" class="topbar"
-      >利用規約</a
-    >・
-              <a href="https://note.com/skikozou/" class="topbar">note</a>
+    <a href="https://skikozou.glitch.me/home.html" class="topbar">ホーム</a>・
+    <a href="https://skikozou.glitch.me/info.html" class="topbar">本サイトについて</a>・
+    <a href="https://skikozou.glitch.me/explanation.html" class="topbar">開発者のプロフィール</a>・
+    <a href="https://skikozou.glitch.me/license.html" class="topbar">利用規約</a>・
+    <a href="https://note.com/skikozou/" class="topbar">note</a>
     <a class="topbar2">(c) 2023 skikozou</a>
-        </nav>
+  </nav>
   <body>
     <div class="wrapper">
       <br><br><br>
@@ -73,7 +60,16 @@ If you make something using the source code of this site and publish it, it woul
           3.本規約の規定が前条の個別規定の規定と矛盾する場合には，個別規定において特段の定めなき限り，個別規定の規定が優先されるものとします。<br>
         </a>
         <h3>
-          第二条（禁止事項）
+          第二条（サービスの内容）
+        </h3>
+        <a>
+          1.本サービスは、インターネット上での便利なツールを提供するものです。<br>
+          2.インターネットへ接続できる回線や端末、ブラウザ等はお客様が用意していただく必要がございます。<br>
+          3.また、サイト上で取得された情報がサーバーに送られることはありません。<br>
+          すべてお使いのデバイス上で完結します。<br>
+        </a>
+        <h3>
+          第三条（禁止事項）
         </h3>
         <a>
           ユーザーは，本サービスの利用にあたり，以下の行為をしてはなりません。<br>
@@ -92,7 +88,7 @@ If you make something using the source code of this site and publish it, it woul
           15.その他，運営が不適切と判断する行為<br>
         </a>
         <h3>
-          第三条（本サービスの提供の停止等）
+          第四条（本サービスの提供の停止等）
         </h3>
         <a>
           1.運営は，以下のいずれかの事由があると判断した場合，ユーザーに事前に通知することなく本サービスの全部または一部の提供を停止または中断することができるものとします。<br>
@@ -103,7 +99,7 @@ If you make something using the source code of this site and publish it, it woul
           2.運営は，本サービスの提供の停止または中断により，ユーザーまたは第三者が被ったいかなる不利益または損害についても，一切の責任を負わないものとします。<br>
         </a>
         <h3>
-          第四条（利用規約の変更）
+          第五条（利用規約の変更）
         </h3>
         <a>
           1.運営は以下の場合には、ユーザーの個別の同意を要せず、本規約を変更することができるものとします。<br>
@@ -112,13 +108,13 @@ If you make something using the source code of this site and publish it, it woul
           2.運営はユーザーに対し、前項による本規約の変更にあたり、事前に、本規約を変更する旨及び変更後の本規約の内容並びにその効力発生時期を通知します。<br>
         </a>
         <h3>
-          第五条（権利義務の譲渡の禁止）
+          第六条（権利義務の譲渡の禁止）
         </h3>
         <a>
           ユーザーは，運営の書面による事前の承諾なく，利用契約上の地位または本規約に基づく権利もしくは義務を第三者に譲渡し，または担保に供することはできません。<br>
         </a>
         <h3>
-          第六条（準拠法・裁判管轄）
+          第七条（準拠法・裁判管轄）
         </h3>
         <a>
           1.本規約の解釈にあたっては，日本法を準拠法とします。<br>

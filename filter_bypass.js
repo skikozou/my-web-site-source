@@ -10,5 +10,22 @@ If you make something using the source code of this site and publish it, it woul
 ******************************************************************************************************************************************************************************************
 */
 
-var code = decodeURIComponent(atob(""));
-document.write(code);
+// スクリーンショットを取得する要素
+const element = document.querySelector('#target-element');
+
+// スクリーンショット用のキャンバス要素を作成
+const canvas = document.createElement('canvas');
+canvas.width = element.offsetWidth;
+canvas.height = element.offsetHeight;
+
+// キャンバスに描画するためのコンテキストを取得
+const context = canvas.getContext('2d');
+
+// キャプチャしたい要素を描画
+context.drawImage(element, 0, 0, canvas.width, canvas.height);
+
+// 画像ファイルとして保存（例：PNG形式）
+const link = document.createElement('a');
+link.download = 'screenshot.png';
+link.href = canvas.toDataURL();
+link.click();  
