@@ -17,7 +17,7 @@ If you make something using the source code of this site and publish it, it woul
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="https://pbs.twimg.com/profile_images/1616684333196251138/iaPzfmZP_400x400.jpg" />
 
-    <title>skikozou | 本サイトについて</title>
+    <title>skikozou | URL encoder</title>
 
     <link rel="stylesheet" href="/style.css" />
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
@@ -25,6 +25,27 @@ If you make something using the source code of this site and publish it, it woul
     <script>
       if (Cookies.get("license")=="Noconsent") {
         window.open("https://skikozou.glitch.me/","_self")
+      }
+      
+      function encode() {
+        var out = encodeURI(document.getElementById("text").value);
+        var text = document.getElementById("out").textContent;
+        document.getElementById("out").textContent = out;
+        console.log(out)
+      }
+      
+      function test() {
+        var out = decodeURI(document.getElementById("text").value);
+        var text = document.getElementById("out").textContent;
+        document.getElementById("out").textContent = out;
+        console.log(out);
+      }
+      
+      function decode() {
+        var out = decodeURI(document.getElementById("text").value);
+        var text = document.getElementById("out").textContent;
+        document.getElementById("out").textContent = out;
+        console.log(out)
       }
     </script>
   </head>
@@ -37,39 +58,22 @@ If you make something using the source code of this site and publish it, it woul
     <a class="topbar2">(c) 2023 skikozou</a>
   </nav>
   <body>
-    <br><br>
     <div class="wrapper">
+      <br><br>
       <div class="content" role="main">
         <h1>
-          本サイトについて
+          URL encoder
         </h1>
-        <img
-          src="https://pbs.twimg.com/profile_images/1616684333196251138/iaPzfmZP_400x400.jpg"
-          class="illustration"
-             href="https://skikozou.glitch.me/explanation.html"
-        />
         <h3>
-            ここでは便利なwebツールやミニゲームなどのサービスを提供しています<br>
-            まだまだ開発中なので追加してほしいものなどあったらtwitterもしくはdiscordでご連絡ください<br>
-            また、<a href="https://note.com/skikozou">note</a>もやっているのでぜひそちらも見てください<br>
-          検索して出てくるようにしました<br>
-          今のところはこんなかんじです<br>
-          またいつか追加するかも？...<br>
-          もしこのサイト作りに協力してくれる人がいたらdiscordもしくはtwitterのDMでお願いします<br>
-          あとなぜかわかりませんがbase64などの入力欄と出力欄があるところで出力欄の中を切り取って実行しようとするとうまく実行されません<br>
-          その場合は再読み込みしてみてください<br>
-          このサイトのソースコードはすべて<a href="https://glitch.com/edit/#!/skikozou">ここで</a>公開しています<br>
-          バグがありましたらtwitterで教えていただけると早めに修正ができます<br>
-          (基本このページは雑です)
-        </h3><br>
-        <h1>尊敬してる人たち(一方的)</h1>
-        <h3>
-          ActiveTK.:<a href="https://www.activetk.jp/">activetk.jp</a><br>
-          256大好き:<a href="https://256server.com/">256server</a><br>
-          やあさの作業部屋:<a href="https://yaasa-linux.github.io/home/">yaasa-linux</a><br>
-          tsumuri:<a href="https://tsumuri.moe/">tsumuri.moe</a><br>
-          
+          URLをエンコード、デコードします
         </h3>
+        <div>
+        <!input type="number" id="in" placeholder="試行回数">
+          <input type="button" onclick="encode()" value="encode">
+          <input type="button" onclick="decode()" value="decode">
+        </div>
+        <textarea id="text" rows="5" cols="100" placeholder="入力欄"></textarea>
+        <textarea id="out" rows="5" cols="100" placeholder="出力欄"></textarea>
       </div>
       <footer class="footer">
         <div>
