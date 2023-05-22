@@ -35,3 +35,7 @@ function bytes2string(bytes) {
     var string = bytes.map(byte => String.fromCharCode(byte)).join('');
     return string;
 }
+
+
+let text = document.getElementById("out").textContent;
+        document.getElementById("out").textContent = p;

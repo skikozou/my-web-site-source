@@ -34,13 +34,6 @@ If you make something using the source code of this site and publish it, it woul
         console.log(out)
       }
       
-      function test() {
-        var out = btoa(document.getElementById("text").value);
-        var text = document.getElementById("out").textContent;
-        document.getElementById("out").textContent = out;
-        console.log(out);
-      }
-      
       function decode() {
         var out = decodeURIComponent(atob(document.getElementById("text").value));
         var text = document.getElementById("out").textContent;

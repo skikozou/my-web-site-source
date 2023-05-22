@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+******************************************************************************************************************************************************************************************
+
+Oops!
+You saw the source code for this site.
+You are free to think what you like about this code, but please note that the copyright belongs to skikozou.
+Please remember this when you look at the source code of this site in the future.
+If you make something using the source code of this site and publish it, it would be good if you could let skikozou know so that there will be less misunderstanding.
+
+******************************************************************************************************************************************************************************************
+-->
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>あなたのデバイスはウイルスに感染しています！</title>
+    <script>
+      
+      function load() {
+      var n = Math.floor(Math.random() * (40 - 11) + 11);
+      document.getElementById("ms").innerHTML = "このデバイスをスキャンしたところ、<a style='color:red;'>"+n+"</a>個のウイルスが見つかりました。";
+        
+      }
+      
+      function del() {
+        alert("ネタだよ");
+      }
+      
+  
+function countdown() {
+  var text = document.getElementById("time").innerText;
+  document.getElementById("time").innerHTML = Number(text)-1;
+  console.log(text);
+  if (document.getElementById("time").innerText=="0") {
+    document.write("<h1 id='ソースコードは好きに使っていいよ^^' style='text-align: center;'>ネタだよ</h1>");
+  }
+}
+      setInterval(countdown,1000);
+    </script>
+    <style>
+      .mein {
+        text-align: center;
+        font-size: 200%;
+      }
+      
+      .time1 {
+        position:absolute;
+        top:445px;
+        left: 570px;
+      }
+      
+      .time2 {
+        position:absolute;
+        top:450px;
+        left: 700px;
+      }
+      
+      .time3 {
+        position:absolute;
+        top:445px;
+        left: 820px;
+      }
+    </style>
+  </head>
+  <body onload="load()">
+    <div class="mein">
+    <h1 style="color:red;">あなたのデバイスはウイルスに感染しています！</h1>
+      <hr>
+      <h3 id="ms">
+        このデバイスをスキャンしたところ、個のウイルスが見つかりました。
+      </h3>
+        <h3>
+          いまなら無料でウイルスを駆除できます<br>
+          下にスクロールして「今すぐウイルスを駆除する」をクリックしてください<br>
+      </h3>
+      <hr>
+      <div>
+      <h1 class="time1">残り</h1><h1 id="time" class="time2">600</h1><h1 class="time3">秒</h1><br><br><br>
+      </div>
+      <hr>
+      <input value="今すぐウイルスを駆除する" onclick="del()" type="button" id="del">
+    </div>
+  </body>
+  <script>
+      if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
+        
+      }
+      else {
+        //window.open("about:blank","_self");
+        //document.title = "";
+      }
+  </script>
+</html>
